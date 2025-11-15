@@ -1,7 +1,62 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>Spotify Playlist Browser</title>
+  <style>
+    body { font-family: sans-serif; background: #121212; color: #eee; }
+    .playlist { cursor: pointer; padding: 10px; border-bottom: 1px solid #333; display: flex; align-items: center; }
+    .playlist img { width: 64px; height: 64px; margin-right: 10px; object-fit: cover; }
+    pre { background: #222; padding: 10px; overflow-x: auto; max-height: 400px; }
+  </style>
+</head>
 <body>
-<button id="login">Login with Spotify</button>
-<pre id="out"></pre>
-<script src="./main.js" type="module"></script>
+
+<h1>My Spotify Playlists</h1>
+<div id="playlists"></div>
+<h2>Tracks JSON</h2>
+<pre id="tracks"></pre>
+
+<script type="module">
+import Spotify from './spotify.js';
+
+const clientId = "a6e9021c90c34cbca9d2cdec3ab272be";
+const redirectUri = "https://hikne2.github.io/spotify/";
+const spotify = new Spotify(clientId, redirectUri);
+
+async function main() {
+  // Load token after login redirect
+  await spotify.loadTokenFromURL();
+
+  // Get current user's playlists
+  const playlistsData = await spotify.getMyPlaylists();
+  const container = document.getElementById('playlists');
+  
+  playlistsData.items.forEach(pl => {
+    const div = document.createElement('div');
+    div.className = 'playlist';
+    div.innerHTML = `
+      <img src="${pl.images[0]?.url || ''}" alt="">
+      <div>
+        <strong>${pl.name}</strong><br>
+        ${pl.tracks.total} tracks
+      </div>
+    `;
+    div.onclick = async () => {
+      // fetch playlist tracks
+      const tracksData = await fetch(pl.tracks.href, {
+        headers: { Authorization: `Bearer ${spotify.token}` }
+      }).then(r => r.json());
+      
+      // show raw JSON for now
+      document.getElementById('tracks').textContent = JSON.stringify(tracksData, null, 2);
+    };
+    container.appendChild(div);
+  });
+}
+
+main();
+</script>
+
 </body>
 </html>
