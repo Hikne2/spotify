@@ -1,0 +1,69 @@
+spotidy
+id: a6e9021c90c34cbca9d2cdec3ab272be
+secret: cbe24327d6b0456cb87bee8a51ce3bc3
+
+// search
+fetch("https://api.spotify.com/v1/search?q=track%3AKisses&type=track&limit=1", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,pl;q=0.7,ja;q=0.6",
+    "authorization": "Bearer BQBgbj0yK2uAs8FodadEs9TzZtzEXoOYLsoT74uMdgRm...wBYbxPQYW7k-NefbPQO17QmT4WU9lVv64y1L-NvBEWk2uJ64U-fX1n34wdo6MJWyb_uvQn9qHeJuHUq6NYCYmH9vZpfGVg2QQEMcllZnxkvdkJYtShmpeEOAGsdeNuc-LWSj4WyG2jWr4yEDS56kC_9-u5sDowMpzTviFzI0UFVNSF9YW--4LxtgB-s3rLeUvyHJCxSa6QzN8tYnqTOrsWV0cxOohq6ewHZnWtaoE81GAVZWnQ-ayqZK0IiMkn2_duceZq0QSxKr-eJyrbV_wSMyw64JQItzdTl",
+    "if-none-match": "\"MC-ImQ0YzY5YTgzZjY4YTc4NzcxZGQ5YzZkMDY5NzM4Y2M0Ig==\"",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://developer.spotify.com/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+// playlist
+fetch("https://api.spotify.com/v1/playlists/2i60Dq3tUFjUolUSPgjzIz", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,pl;q=0.7,ja;q=0.6",
+    "authorization": "Bearer BQAu3Z77nSdZq6zWF83bB2S6DtDxh5mQm9q_l_ABPQ4OuRwT...FW5SmP9bjQjVsMYXkUz42WUGWjUaZTF9GuGrVdG-RPrgCBjJRDooB-kp_4xpSKOSEXPGJFGEgzTOwf7mKqx2bcGrq85WZwYJvngNTY0HEiRW10yE6HRgrfZZrPqGc4jACJ3Os1yV9KOf_AvHq2WHSXXMY6nSUC0W6ZgH0FYNbPOzuJ4Zv8PQFjg_4sDX73WMI0cnHihkWIIxjy98WSjNQ0atOqQrflamgpTqaPsAquxU4wiK7s1cRqHdd39",
+    "if-none-match": "\"MC-IjYxMzE0MzFhYjcwM2Y3NDFkNzJlNGNlMWYwNTA0MGI4Ig==\"",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://developer.spotify.com/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+// playlists
+fetch("https://api.spotify.com/v1/me/playlists", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,pl;q=0.7,ja;q=0.6",
+    "authorization": "Bearer BQAu3Z77nSdZq6zWF83bB2S6DtDxh...jVsMYXkUz42WUGWjUaZTF9GuGrVdG-RPrgCBjJRDooB-kp_4xpSKOSEXPGJFGEgzTOwf7mKqx2bcGrq85WZwYJvngNTY0HEiRW10yE6HRgrfZZrPqGc4jACJ3Os1yV9KOf_AvHq2WHSXXMY6nSUC0W6ZgH0FYNbPOzuJ4Zv8PQFjg_4sDX73WMI0cnHihkWIIxjy98WSjNQ0atOqQrflamgpTqaPsAquxU4wiK7s1cRqHdd39",
+    "if-none-match": "\"MC-IjRhYWVjMzk1MjAyNjUwNTUzNGJjMDYzNjc0MzA1ZDc3Ig==\"",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://developer.spotify.com/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
