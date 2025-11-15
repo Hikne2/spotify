@@ -1,7 +1,7 @@
 import Spotify from "./spotify.js";
 
 const clientId = "a6e9021c90c34cbca9d2cdec3ab272be";
-const redirectUri = "http://localhost:5500"; // change this if needed
+const redirectUri = "https://hikne2.github.io/spotify/"; // change this if needed
 const api = new Spotify(clientId, redirectUri); 
 
 document.getElementById("login").onclick = () => api.login();
